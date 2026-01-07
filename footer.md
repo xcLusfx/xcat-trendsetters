@@ -1,4 +1,4 @@
-![Fashion Blog](/icons/logo.svg)
+**Fashion Blog**
 
 [Facebook](#) | [Instagram](#) | [X](#) | [LinkedIn](#) | [YouTube](#)
 

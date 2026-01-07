@@ -15,31 +15,27 @@ footer .footer > div > div:first-child {
   gap: var(--spacing-m);
 }
 
-/* Logo and brand */
+/* Brand text */
 footer .footer > div > div:first-child p:first-child {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-s);
   font-family: var(--heading-font-family);
   font-size: var(--body-font-size-l);
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-}
-
-footer .footer > div > div:first-child p:first-child img {
-  height: 24px;
-  width: auto;
+  margin: 0;
 }
 
 /* Social links row */
 footer .footer > div > div:first-child p:last-child {
   display: flex;
-  gap: var(--spacing-s);
+  gap: var(--spacing-m);
   flex-wrap: wrap;
   align-items: center;
+  font-size: 0; /* Hide separator text */
 }
 
 footer .footer > div > div:first-child p:last-child a {
+  font-size: var(--body-font-size-s);
   opacity: 0.7;
   transition: opacity var(--transition-default);
 }
@@ -66,15 +62,16 @@ footer .footer > div > div:last-child ul {
   margin-bottom: var(--spacing-l);
 }
 
-/* Column headings */
+/* Column headings - Syncopate font with muted color */
 footer .footer h2 {
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  font-weight: 600;
-  letter-spacing: normal;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-top: 0;
   margin-bottom: var(--spacing-s);
-  color: var(--text-color-inverse);
+  color: var(--text-color-muted-inverse);
 }
 
 /* Column lists */
@@ -89,13 +86,13 @@ footer .footer li {
 }
 
 footer .footer li a {
-  font-size: var(--body-font-size-s);
-  opacity: 0.7;
+  font-size: var(--body-font-size-m);
+  opacity: 1;
   transition: opacity var(--transition-default);
 }
 
 footer .footer li a:hover {
-  opacity: 1;
+  opacity: 0.7;
   text-decoration: none;
 }
 
