@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-articles",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-01-07T17:40:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site",
+    "originPage": "homepage articles section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "articles",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image | tag + heading + description + link",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "blog article previews",
+      "news listings",
+      "content teasers with images"
+    ],
+    "notSuitableFor": [
+      "feature lists without images",
+      "product grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-07T17:40:00.000Z"
+  }
+}

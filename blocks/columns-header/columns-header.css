@@ -1,0 +1,65 @@
+/*
+ * Columns-Header Block
+ * Section header with title, description, and CTA button
+ */
+
+.columns-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+
+.columns-header > div > div:first-child {
+  flex: 1;
+}
+
+.columns-header > div > div:first-child h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-s);
+}
+
+.columns-header > div > div:first-child p {
+  margin: 0;
+  color: var(--text-color-muted);
+  max-width: 600px;
+}
+
+.columns-header > div > div:last-child {
+  display: flex;
+  gap: var(--spacing-s);
+}
+
+.columns-header > div > div:last-child .button {
+  margin: 0;
+}
+
+.columns-header img {
+  width: 100%;
+}
+
+.columns-header > div > .columns-header-img-col {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .columns-header > div {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+  }
+
+  .columns-header > div > div:first-child {
+    flex: 1;
+  }
+
+  .columns-header > div > div:last-child {
+    flex: 0 0 auto;
+  }
+}
+
+/* Dark section variant */
+.section.dark .columns-header > div > div:first-child p,
+.section.inverse .columns-header > div > div:first-child p {
+  color: var(--text-color-muted-inverse);
+}

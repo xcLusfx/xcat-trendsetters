@@ -1,0 +1,121 @@
+/*
+ * Tabs-Showcase Block
+ * Tabbed content section (used in dark/inverse sections)
+ */
+
+.tabs-showcase {
+  text-align: center;
+}
+
+.tabs-showcase .tabs-showcase-list {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.tabs-showcase .tabs-showcase-list button,
+.section.dark .tabs-showcase .tabs-showcase-list button,
+.section.inverse .tabs-showcase .tabs-showcase-list button {
+  flex: 0 0 max-content;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 15px 22px;
+  background-color: transparent;
+  color: var(--text-color-muted-inverse);
+  font-family: var(--body-font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  transition: border-color var(--transition-default), color var(--transition-default);
+  white-space: nowrap;
+}
+
+.tabs-showcase .tabs-showcase-list button:hover,
+.tabs-showcase .tabs-showcase-list button:focus,
+.section.dark .tabs-showcase .tabs-showcase-list button:hover,
+.section.dark .tabs-showcase .tabs-showcase-list button:focus,
+.section.inverse .tabs-showcase .tabs-showcase-list button:hover,
+.section.inverse .tabs-showcase .tabs-showcase-list button:focus {
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  color: var(--text-color-inverse);
+}
+
+.tabs-showcase .tabs-showcase-list button p {
+  margin: 0;
+}
+
+.tabs-showcase .tabs-showcase-list button[aria-selected='true'],
+.section.dark .tabs-showcase .tabs-showcase-list button[aria-selected='true'],
+.section.inverse .tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
+  box-shadow: none;
+  border-bottom-color: var(--text-color-inverse);
+  color: var(--text-color-inverse);
+  cursor: default;
+}
+
+.tabs-showcase .tabs-showcase-panel {
+  margin-top: 0;
+  padding: var(--spacing-l) 0;
+  overflow: visible;
+  text-align: center;
+}
+
+.tabs-showcase .tabs-showcase-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-showcase .tabs-showcase-panel h2,
+.tabs-showcase .tabs-showcase-panel h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-l);
+}
+
+.tabs-showcase .tabs-showcase-panel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+}
+
+/* Light section variant (override dark styling) */
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button {
+  color: var(--text-color-muted);
+  box-shadow: none;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button:hover,
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button:focus {
+  box-shadow: none;
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
+}
+
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
+  box-shadow: none;
+  border-bottom-color: var(--text-color);
+  color: var(--text-color);
+}
+
+@media (width >= 600px) {
+  .tabs-showcase .tabs-showcase-list button {
+    font-size: var(--body-font-size-l);
+    padding: 18px 28px;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-showcase .tabs-showcase-list button {
+    font-size: var(--body-font-size-xl);
+    padding: 20px 32px;
+  }
+}

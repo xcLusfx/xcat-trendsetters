@@ -1,0 +1,49 @@
+/*
+ * Columns-Images Block
+ * Hero section with side-by-side images
+ */
+
+.columns-images > div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.columns-images > div > div {
+  flex: 1;
+}
+
+.columns-images img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-lg);
+  object-fit: cover;
+  display: block;
+}
+
+.columns-images > div > .columns-images-img-col {
+  display: block;
+}
+
+.columns-images > div > .columns-images-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-images > div {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .columns-images > div > div {
+    flex: 1;
+  }
+
+  .columns-images img {
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+  }
+}
