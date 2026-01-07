@@ -16,35 +16,50 @@
   margin-bottom: var(--spacing-xl);
 }
 
-.tabs-showcase .tabs-showcase-list button {
+.tabs-showcase .tabs-showcase-list button,
+.section.dark .tabs-showcase .tabs-showcase-list button,
+.section.inverse .tabs-showcase .tabs-showcase-list button {
   flex: 0 0 max-content;
   margin: 0;
   border: none;
   border-radius: 0;
   padding: 15px 22px;
   background-color: transparent;
-  color: inherit;
+  color: var(--text-color-muted-inverse);
   font-family: var(--body-font-family);
   font-size: 15px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   cursor: pointer;
-  box-shadow: rgba(255, 255, 255, 0.3) 0px -2px 0px 0px inset;
-  transition: box-shadow var(--transition-default), color var(--transition-default);
+  box-shadow: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  transition: border-color var(--transition-default), color var(--transition-default);
   white-space: nowrap;
 }
 
-.tabs-showcase .tabs-showcase-list button:hover {
-  box-shadow: rgba(255, 255, 255, 0.5) 0px -2px 0px 0px inset;
+.tabs-showcase .tabs-showcase-list button:hover,
+.tabs-showcase .tabs-showcase-list button:focus,
+.section.dark .tabs-showcase .tabs-showcase-list button:hover,
+.section.dark .tabs-showcase .tabs-showcase-list button:focus,
+.section.inverse .tabs-showcase .tabs-showcase-list button:hover,
+.section.inverse .tabs-showcase .tabs-showcase-list button:focus {
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  color: var(--text-color-inverse);
 }
 
 .tabs-showcase .tabs-showcase-list button p {
   margin: 0;
 }
 
-.tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
-  box-shadow: rgba(255, 255, 255, 0.7) 0px -2px 0px 0px inset;
+.tabs-showcase .tabs-showcase-list button[aria-selected='true'],
+.section.dark .tabs-showcase .tabs-showcase-list button[aria-selected='true'],
+.section.inverse .tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
+  box-shadow: none;
+  border-bottom-color: var(--text-color-inverse);
+  color: var(--text-color-inverse);
   cursor: default;
 }
 
@@ -73,16 +88,22 @@
 
 /* Light section variant (override dark styling) */
 .section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button {
-  color: var(--text-color);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px -2px 0px 0px inset;
+  color: var(--text-color-muted);
+  box-shadow: none;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 
-.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button:hover {
-  box-shadow: rgba(0, 0, 0, 0.5) 0px -2px 0px 0px inset;
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button:hover,
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button:focus {
+  box-shadow: none;
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  color: var(--text-color);
 }
 
 .section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
-  box-shadow: rgba(0, 0, 0, 0.7) 0px -2px 0px 0px inset;
+  box-shadow: none;
+  border-bottom-color: var(--text-color);
+  color: var(--text-color);
 }
 
 @media (width >= 600px) {
