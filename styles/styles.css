@@ -1,83 +1,118 @@
 /*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * WKND Trendsetters Design System
+ * Migrated from https://wknd-trendsetters.site
  */
 
+/* Fallback fonts */
+@font-face {
+  font-family: instrument-sans-fallback;
+  size-adjust: 100%;
+  src: local('Arial');
+}
+
+@font-face {
+  font-family: syncopate-fallback;
+  size-adjust: 95%;
+  src: local('Arial Narrow'), local('Helvetica Condensed'), local('Arial');
+}
+
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* Colors */
+  --background-color: #fff;
+  --background-color-secondary: #f7f8f5;
+  --background-color-inverse: #000;
+  --text-color: #000;
+  --text-color-inverse: #fff;
+  --text-color-muted: rgba(0, 0, 0, 0.7);
+  --text-color-muted-inverse: rgba(255, 255, 255, 0.7);
+  --accent-color: #f4fe8b;
+  --accent-color-alpha: rgba(244, 254, 139, 0.5);
+  --link-color: #000;
+  --link-hover-color: #000;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* Fonts */
+  --body-font-family: "Instrument Sans", instrument-sans-fallback, sans-serif;
+  --heading-font-family: Syncopate, syncopate-fallback, sans-serif;
 
-  /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
-  --body-font-size-xs: 17px;
+  /* Body sizes */
+  --body-font-size-xl: 18px;
+  --body-font-size-l: 16px;
+  --body-font-size-m: 14px;
+  --body-font-size-s: 12px;
+  --body-font-size-xs: 10px;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
-  --heading-font-size-l: 34px;
-  --heading-font-size-m: 27px;
-  --heading-font-size-s: 24px;
-  --heading-font-size-xs: 22px;
+  /* Heading sizes - Mobile first */
+  --heading-font-size-xxl: 48px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
 
-  /* nav height */
+  /* Line heights */
+  --heading-line-height: 1.04;
+  --body-line-height: 1.6;
+
+  /* Letter spacing */
+  --heading-letter-spacing: -0.01em;
+  --body-letter-spacing: normal;
+
+  /* Spacing */
+  --section-padding: 64px;
+  --spacing-xxl: 64px;
+  --spacing-xl: 48px;
+  --spacing-l: 32px;
+  --spacing-m: 24px;
+  --spacing-s: 16px;
+  --spacing-xs: 8px;
+
+  /* Border radius */
+  --border-radius-pill: 1600px;
+  --border-radius-lg: 20px;
+  --border-radius-md: 12px;
+  --border-radius-sm: 8px;
+
+  /* Transitions */
+  --transition-default: 0.2s ease;
+  --transition-button: border-color 0.2s, color 0.2s, background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s;
+
+  /* Button styles */
+  --button-padding: 16px 24px;
+  --button-font-size: 16px;
+  --button-border-radius: var(--border-radius-pill);
+  --button-box-shadow-hover: rgb(0, 0, 0) 0px 0px 0px 2px inset, var(--accent-color-alpha) 7px 7px 0px 0px;
+  --button-box-shadow-hover-small: rgb(0, 0, 0) 0px 0px 0px 2px inset, var(--accent-color-alpha) 4px 4px 0px 0px;
+
+  /* Nav height */
   --nav-height: 64px;
 }
 
-/* fallback fonts */
-@font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
-  src: local('Arial');
-}
-
+/* Desktop breakpoint */
 @media (width >= 900px) {
   :root {
-    /* body sizes */
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
+    /* Heading sizes - Desktop */
+    --heading-font-size-xxl: 72px;
+    --heading-font-size-xl: 48px;
+    --heading-font-size-l: 36px;
+    --heading-font-size-m: 24px;
     --heading-font-size-s: 20px;
     --heading-font-size-xs: 18px;
+
+    /* Section padding - Desktop */
+    --section-padding: 112px;
   }
 }
 
+/* Base styles */
 body {
   display: none;
   margin: 0;
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  line-height: 1.6;
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-spacing);
 }
 
 body.appear {
@@ -98,6 +133,7 @@ footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
+/* Typography */
 h1,
 h2,
 h3,
@@ -107,17 +143,35 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 400;
+  line-height: var(--heading-line-height);
+  letter-spacing: var(--heading-letter-spacing);
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 p,
 dl,
@@ -131,13 +185,13 @@ blockquote {
 
 code,
 pre {
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
 }
 
 pre {
   padding: 16px;
-  border-radius: 8px;
-  background-color: var(--light-color);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--background-color-secondary);
   overflow-x: auto;
   white-space: pre;
 }
@@ -153,63 +207,93 @@ button {
   font: inherit;
 }
 
-/* links */
+/* Links */
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
+  transition: color var(--transition-default);
 }
 
 a:hover {
   color: var(--link-hover-color);
-  text-decoration: underline;
 }
 
-/* buttons */
+/* Buttons */
 a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border: none;
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: var(--button-font-size);
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: transparent;
+  color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 2px inset;
+  transition: var(--transition-button);
 }
 
 a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: rgba(244, 254, 139, 0.1);
+  box-shadow: var(--button-box-shadow-hover);
   cursor: pointer;
+}
+
+a.button:focus,
+button:focus {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
 }
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
+  background-color: var(--background-color-secondary);
+  box-shadow: none;
   cursor: unset;
+  opacity: 0.5;
 }
 
+/* Primary button - filled */
+a.button.primary,
+button.primary {
+  background-color: var(--text-color);
+  color: var(--text-color-inverse);
+  box-shadow: none;
+}
+
+a.button.primary:hover,
+a.button.primary:focus,
+button.primary:hover,
+button.primary:focus {
+  background-color: var(--text-color);
+  box-shadow: var(--accent-color-alpha) 7px 7px 0px 0px;
+}
+
+/* Secondary button - outline (default) */
 a.button.secondary,
 button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
+  background-color: transparent;
   color: var(--text-color);
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 2px inset;
 }
 
+/* Images */
 main img {
   max-width: 100%;
   width: auto;
@@ -227,15 +311,16 @@ main img {
   width: 100%;
 }
 
-/* sections */
+/* Sections */
 main > .section {
-  margin: 40px 0;
+  margin: 0;
+  padding: var(--section-padding) 0;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
-  padding: 0 24px;
+  padding: 0 16px;
 }
 
 main > .section:first-of-type {
@@ -248,10 +333,147 @@ main > .section:first-of-type {
   }
 }
 
-/* section metadata */
+/* Section variants */
 main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
+main .section.secondary {
+  background-color: var(--background-color-secondary);
+}
+
+main .section.dark,
+main .section.inverse {
+  background-color: var(--background-color-inverse);
+  color: var(--text-color-inverse);
+}
+
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark h5,
+main .section.dark h6,
+main .section.inverse h1,
+main .section.inverse h2,
+main .section.inverse h3,
+main .section.inverse h4,
+main .section.inverse h5,
+main .section.inverse h6 {
+  color: var(--text-color-inverse);
+}
+
+main .section.dark p,
+main .section.inverse p {
+  color: var(--text-color-muted-inverse);
+}
+
+main .section.dark a:any-link,
+main .section.inverse a:any-link {
+  color: var(--text-color-inverse);
+}
+
+/* Dark section buttons */
+main .section.dark a.button:any-link,
+main .section.dark button,
+main .section.inverse a.button:any-link,
+main .section.inverse button {
+  color: var(--text-color-inverse);
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset;
+}
+
+main .section.dark a.button:hover,
+main .section.dark a.button:focus,
+main .section.dark button:hover,
+main .section.dark button:focus,
+main .section.inverse a.button:hover,
+main .section.inverse a.button:focus,
+main .section.inverse button:hover,
+main .section.inverse button:focus {
+  background-color: rgba(244, 254, 139, 0.1);
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 2px inset, var(--accent-color-alpha) 7px 7px 0px 0px;
+}
+
+main .section.dark a.button.primary,
+main .section.dark button.primary,
+main .section.inverse a.button.primary,
+main .section.inverse button.primary {
+  background-color: var(--text-color-inverse);
+  color: var(--text-color);
+  box-shadow: none;
+}
+
+main .section.dark a.button.primary:hover,
+main .section.dark a.button.primary:focus,
+main .section.dark button.primary:hover,
+main .section.dark button.primary:focus,
+main .section.inverse a.button.primary:hover,
+main .section.inverse a.button.primary:focus,
+main .section.inverse button.primary:hover,
+main .section.inverse button.primary:focus {
+  box-shadow: var(--accent-color-alpha) 7px 7px 0px 0px;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 2px 9px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-pill);
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.section.dark .tag,
+.section.inverse .tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color-inverse);
+}
+
+/* Footer */
+footer {
+  background-color: var(--background-color-inverse);
+  color: var(--text-color-inverse);
+  padding: var(--spacing-xl) 0;
+}
+
+footer .footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+footer a:any-link {
+  color: var(--text-color-inverse);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer h2 {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-l);
+  font-weight: 600;
+  letter-spacing: normal;
+  margin-top: 0;
+  margin-bottom: var(--spacing-s);
+}
+
+footer ul {
+  list-style: none;
   margin: 0;
-  padding: 40px 0;
+  padding: 0;
+}
+
+footer li {
+  margin-bottom: var(--spacing-xs);
+}
+
+footer p {
+  color: var(--text-color-muted-inverse);
+}
+
+@media (width >= 900px) {
+  footer .footer {
+    padding: 0 32px;
+  }
 }

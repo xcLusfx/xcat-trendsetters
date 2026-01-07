@@ -1,0 +1,37 @@
+{
+  "variantName": "columns-header",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-07T17:40:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://wknd-trendsetters.site",
+    "originPage": "homepage section header",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "section-header",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + paragraph | button",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "section headers with CTAs",
+      "intro text with action button"
+    ],
+    "notSuitableFor": [
+      "image galleries",
+      "multi-column content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-07T17:40:00.000Z"
+  }
+}
