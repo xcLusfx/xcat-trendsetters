@@ -13,17 +13,32 @@
 :root {
   /* colors */
   --background-color: white;
+  --background-color-inverse: #000;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
+  --text-color-inverse: #fff;
+  --text-color-muted-inverse: rgba(255, 255, 255, 0.6);
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
   /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --body-font-family: 'Instrument Sans', sans-serif;
+  --heading-font-family: 'Syncopate', sans-serif;
+
+  /* spacing */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* transitions */
+  --transition-default: 0.2s ease;
 
   /* body sizes */
+  --body-font-size-l: 18px;
   --body-font-size-m: 22px;
   --body-font-size-s: 19px;
   --body-font-size-xs: 17px;

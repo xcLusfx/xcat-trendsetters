@@ -1,4 +1,8 @@
 /* stylelint-disable max-line-length */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Syncopate:wght@400;700&display=swap');
+
 @font-face {
   font-family: roboto-condensed;
   font-style: normal;
