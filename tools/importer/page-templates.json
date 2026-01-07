@@ -1,0 +1,72 @@
+{
+  "templates": [
+    {
+      "name": "wknd-trendsetters-homepage",
+      "urls": ["https://wknd-trendsetters.site"],
+      "description": "WKND Trendsetters homepage with hero, features, articles, tabs, FAQ, and CTA sections",
+      "blocks": [
+        {
+          "name": "section-hero",
+          "section": true,
+          "selector": "header.section.secondary-section"
+        },
+        {
+          "name": "columns-images",
+          "selector": "header .w-layout-grid.grid-layout.mobile-portrait-1-column"
+        },
+        {
+          "name": "section-features",
+          "section": true,
+          "selector": "section.section:has(.grid-layout.desktop-4-column)"
+        },
+        {
+          "name": "cards-features",
+          "selector": ".grid-layout.desktop-4-column.tablet-3-column"
+        },
+        {
+          "name": "section-articles",
+          "section": true,
+          "style": "secondary",
+          "selector": "section.section.secondary-section:has(.tag)"
+        },
+        {
+          "name": "columns-header",
+          "selector": ".grid-layout.mobile-landscape-1-column.y-bottom"
+        },
+        {
+          "name": "cards-articles",
+          "selector": ".grid-layout.tablet-1-column.grid-gap-md:has(.utility-link-content-block)"
+        },
+        {
+          "name": "section-tabs",
+          "section": true,
+          "style": "dark",
+          "selector": "section.section.inverse-section"
+        },
+        {
+          "name": "tabs-showcase",
+          "selector": ".w-tabs"
+        },
+        {
+          "name": "section-faq",
+          "section": true,
+          "style": "secondary",
+          "selector": "section.section.secondary-section:has(.accordion)"
+        },
+        {
+          "name": "accordion-faq",
+          "selector": ".flex-vertical:has(.accordion)"
+        },
+        {
+          "name": "section-cta",
+          "section": true,
+          "selector": "section.section:has(.vertical-stretch)"
+        },
+        {
+          "name": "columns-cta",
+          "selector": ".grid-layout.desktop-4-column.tablet-1-column.y-center"
+        }
+      ]
+    }
+  ]
+}

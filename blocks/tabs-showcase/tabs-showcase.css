@@ -1,0 +1,63 @@
+.tabs-showcase .tabs-showcase-list {
+  display: flex;
+  gap: 0.5ch;
+  max-width: 100%;
+  font-size: var(--body-font-size-xs);
+  overflow-x: auto;
+  justify-content: center;
+}
+
+@media (width >= 600px) {
+  .tabs-showcase .tabs-showcase-list {
+    font-size: var(--body-font-size-s);
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-showcase .tabs-showcase-list {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+.tabs-showcase .tabs-showcase-list button {
+  flex: 0 0 max-content;
+  margin: 0;
+  border: 1px solid var(--dark-color);
+  border-radius: 0;
+  padding: 0.5em 1.5em;
+  background-color: transparent;
+  color: inherit;
+  font-weight: bold;
+  line-height: unset;
+  text-align: initial;
+  text-overflow: unset;
+  overflow: unset;
+  white-space: unset;
+  transition: background-color 0.2s;
+}
+
+.tabs-showcase .tabs-showcase-list button p {
+  margin: 0;
+}
+
+.tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
+  border-bottom: 2px solid currentColor;
+  background-color: transparent;
+  cursor: initial;
+}
+
+.tabs-showcase .tabs-showcase-panel {
+  margin-top: -1px;
+  padding: 24px;
+  overflow: auto;
+  text-align: center;
+}
+
+.tabs-showcase .tabs-showcase-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-showcase .tabs-showcase-panel img {
+  max-width: 100%;
+  height: auto;
+}
