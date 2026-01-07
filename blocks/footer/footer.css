@@ -3,6 +3,18 @@
  * Dark footer with logo, social links, and multi-column navigation
  */
 
+footer {
+  background-color: var(--background-color-inverse);
+  color: var(--text-color-inverse);
+  padding: 64px 0;
+}
+
+footer .footer {
+  max-width: var(--section-max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--spacing-l);
+}
+
 footer .footer > div {
   display: grid;
   grid-template-columns: 1fr;
@@ -18,25 +30,28 @@ footer .footer > div > div:first-child {
 /* Brand text */
 footer .footer > div > div:first-child p:first-child {
   font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-l);
+  font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   margin: 0;
+  color: var(--text-color-inverse);
 }
 
 /* Social links row */
 footer .footer > div > div:first-child p:last-child {
   display: flex;
-  gap: var(--spacing-m);
+  gap: var(--spacing-s);
   flex-wrap: wrap;
   align-items: center;
   font-size: 0; /* Hide separator text */
+  margin-top: var(--spacing-xl);
 }
 
 footer .footer > div > div:first-child p:last-child a {
-  font-size: var(--body-font-size-s);
-  opacity: 0.7;
+  font-size: 14px;
+  color: var(--text-color-inverse);
+  opacity: 0.8;
   transition: opacity var(--transition-default);
 }
 
@@ -65,13 +80,13 @@ footer .footer > div > div:last-child ul {
 /* Column headings - Syncopate font with muted color */
 footer .footer h2 {
   font-family: var(--heading-font-family);
-  font-size: var(--body-font-size-s);
+  font-size: 11px;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 0;
-  margin-bottom: var(--spacing-s);
-  color: var(--text-color-muted-inverse);
+  margin-bottom: var(--spacing-m);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Column lists */
@@ -86,7 +101,9 @@ footer .footer li {
 }
 
 footer .footer li a {
-  font-size: var(--body-font-size-m);
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  color: var(--text-color-inverse);
   opacity: 1;
   transition: opacity var(--transition-default);
 }
@@ -110,12 +127,20 @@ footer .footer hr {
   }
 
   footer .footer > div > div:first-child {
-    flex: 0 0 auto;
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+  }
+
+  footer .footer > div > div:first-child p:last-child {
+    margin-top: auto;
   }
 
   footer .footer > div > div:last-child {
     flex: 1;
-    max-width: 500px;
+    max-width: 700px;
   }
 }
 
