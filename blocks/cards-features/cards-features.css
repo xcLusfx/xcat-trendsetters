@@ -1,26 +1,62 @@
+/*
+ * Cards-Features Block
+ * Feature grid with icons and descriptions
+ */
+
 .cards-features > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
 }
 
 .cards-features > ul > li {
-  background-color: var(--background-color);
-}
-
-.cards-features .cards-features-card-body {
-  margin: 16px;
+  background-color: transparent;
+  text-align: center;
 }
 
 .cards-features .cards-features-card-image {
-  line-height: 0;
+  margin-bottom: var(--spacing-s);
 }
 
-.cards-features > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-features .cards-features-card-image img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.cards-features .cards-features-card-body {
+  margin: 0;
+}
+
+.cards-features .cards-features-card-body p {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  color: var(--text-color);
+}
+
+@media (width >= 600px) {
+  .cards-features > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-features > ul {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+  }
+
+  .cards-features .cards-features-card-image img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cards-features .cards-features-card-body p {
+    font-size: var(--body-font-size-l);
+  }
 }

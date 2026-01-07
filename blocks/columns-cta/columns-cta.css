@@ -1,41 +1,78 @@
+/*
+ * Columns-CTA Block
+ * Call-to-action section with heading, description, and buttons
+ */
+
 .columns-cta > div {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--spacing-l);
+  text-align: center;
+}
+
+.columns-cta > div > div:first-child {
+  flex: 1;
+}
+
+.columns-cta > div > div:first-child h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-s);
+}
+
+.columns-cta > div > div:first-child p {
+  margin: 0;
+  color: var(--text-color-muted);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.columns-cta > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  align-items: center;
+}
+
+.columns-cta > div > div:last-child .button {
+  margin: 0;
 }
 
 .columns-cta img {
   width: 100%;
 }
 
-.columns-cta > div > div {
-  order: 1;
-}
-
 .columns-cta > div > .columns-cta-img-col {
-  order: 0;
-}
-
-.columns-cta > div > .columns-cta-img-col img {
-  display: block;
+  display: none;
 }
 
 @media (width >= 900px) {
   .columns-cta > div {
+    flex-direction: row;
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    justify-content: space-between;
+    text-align: left;
+    gap: var(--spacing-xxl);
   }
 
-  .columns-cta > div > div {
+  .columns-cta > div > div:first-child {
     flex: 1;
-    order: unset;
+  }
+
+  .columns-cta > div > div:first-child p {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .columns-cta > div > div:last-child {
     flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: var(--spacing-m);
   }
+}
+
+/* Dark section variant */
+.section.dark .columns-cta > div > div:first-child p,
+.section.inverse .columns-cta > div > div:first-child p {
+  color: var(--text-color-muted-inverse);
 }

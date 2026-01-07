@@ -1,39 +1,42 @@
+/*
+ * Tabs-Showcase Block
+ * Tabbed content section (used in dark/inverse sections)
+ */
+
+.tabs-showcase {
+  text-align: center;
+}
+
 .tabs-showcase .tabs-showcase-list {
   display: flex;
-  gap: 0.5ch;
+  gap: 0;
   max-width: 100%;
-  font-size: var(--body-font-size-xs);
   overflow-x: auto;
   justify-content: center;
-}
-
-@media (width >= 600px) {
-  .tabs-showcase .tabs-showcase-list {
-    font-size: var(--body-font-size-s);
-  }
-}
-
-@media (width >= 900px) {
-  .tabs-showcase .tabs-showcase-list {
-    font-size: var(--body-font-size-m);
-  }
+  margin-bottom: var(--spacing-xl);
 }
 
 .tabs-showcase .tabs-showcase-list button {
   flex: 0 0 max-content;
   margin: 0;
-  border: 1px solid var(--dark-color);
+  border: none;
   border-radius: 0;
-  padding: 0.5em 1.5em;
+  padding: 15px 22px;
   background-color: transparent;
   color: inherit;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
-  text-overflow: unset;
-  overflow: unset;
-  white-space: unset;
-  transition: background-color 0.2s;
+  font-family: var(--body-font-family);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: rgba(255, 255, 255, 0.3) 0px -2px 0px 0px inset;
+  transition: box-shadow var(--transition-default), color var(--transition-default);
+  white-space: nowrap;
+}
+
+.tabs-showcase .tabs-showcase-list button:hover {
+  box-shadow: rgba(255, 255, 255, 0.5) 0px -2px 0px 0px inset;
 }
 
 .tabs-showcase .tabs-showcase-list button p {
@@ -41,15 +44,14 @@
 }
 
 .tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
-  border-bottom: 2px solid currentColor;
-  background-color: transparent;
-  cursor: initial;
+  box-shadow: rgba(255, 255, 255, 0.7) 0px -2px 0px 0px inset;
+  cursor: default;
 }
 
 .tabs-showcase .tabs-showcase-panel {
-  margin-top: -1px;
-  padding: 24px;
-  overflow: auto;
+  margin-top: 0;
+  padding: var(--spacing-l) 0;
+  overflow: visible;
   text-align: center;
 }
 
@@ -57,7 +59,42 @@
   display: none;
 }
 
+.tabs-showcase .tabs-showcase-panel h2,
+.tabs-showcase .tabs-showcase-panel h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-l);
+}
+
 .tabs-showcase .tabs-showcase-panel img {
   max-width: 100%;
   height: auto;
+  border-radius: var(--border-radius-lg);
+}
+
+/* Light section variant (override dark styling) */
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button {
+  color: var(--text-color);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px -2px 0px 0px inset;
+}
+
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button:hover {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px -2px 0px 0px inset;
+}
+
+.section:not(.dark):not(.inverse) .tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
+  box-shadow: rgba(0, 0, 0, 0.7) 0px -2px 0px 0px inset;
+}
+
+@media (width >= 600px) {
+  .tabs-showcase .tabs-showcase-list button {
+    font-size: var(--body-font-size-l);
+    padding: 18px 28px;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs-showcase .tabs-showcase-list button {
+    font-size: var(--body-font-size-xl);
+    padding: 20px 32px;
+  }
 }

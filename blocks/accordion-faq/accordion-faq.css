@@ -1,33 +1,45 @@
+/*
+ * Accordion-FAQ Block
+ * FAQ accordion with questions and answers
+ */
+
+.accordion-faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .accordion-faq details {
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .accordion-faq details:first-of-type {
-  border-top: 1px solid #dadada;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .accordion-faq details p {
-  margin-bottom: 0.8em;
+  margin: 0 0 0.8em;
 }
 
 .accordion-faq details summary {
   position: relative;
-  padding: 16px 0;
-  padding-right: 46px;
+  padding: var(--spacing-m) 0;
+  padding-right: 48px;
   cursor: pointer;
   list-style: none;
-  overflow: auto;
-  transition: background-color 0.2s;
-  font-size: 1.1em;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xl);
+  font-weight: 400;
+  line-height: 1.4;
+  transition: color var(--transition-default);
 }
 
 .accordion-faq details[open] summary {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .accordion-faq details summary:focus,
 .accordion-faq details summary:hover {
-  background-color: var(--light-color);
+  color: var(--text-color-muted);
 }
 
 .accordion-faq details summary::-webkit-details-marker {
@@ -38,19 +50,53 @@
   content: '';
   position: absolute;
   top: 50%;
-  right: 18px;
-  transform: translateY(-50%) rotate(135deg);
-  width: 8px;
-  height: 8px;
-  border: 2px solid;
-  border-width: 2px 2px 0 0;
-  transition: transform 0.2s;
+  right: 0;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  border: 2px solid currentcolor;
+  border-width: 0 2px 2px 0;
+  transition: transform var(--transition-default);
 }
 
 .accordion-faq details[open] summary::after {
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-135deg);
 }
 
 .accordion-faq details .accordion-faq-item-body {
-  padding: 0 0 16px 0;
+  padding: 0 0 var(--spacing-m) 0;
+}
+
+.accordion-faq details .accordion-faq-item-body p {
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height);
+  color: var(--text-color-muted);
+}
+
+/* Dark section variant */
+.section.dark .accordion-faq details,
+.section.inverse .accordion-faq details {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.section.dark .accordion-faq details:first-of-type,
+.section.inverse .accordion-faq details:first-of-type {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.section.dark .accordion-faq details summary,
+.section.inverse .accordion-faq details summary {
+  color: var(--text-color-inverse);
+}
+
+.section.dark .accordion-faq details summary:focus,
+.section.dark .accordion-faq details summary:hover,
+.section.inverse .accordion-faq details summary:focus,
+.section.inverse .accordion-faq details summary:hover {
+  color: var(--text-color-muted-inverse);
+}
+
+.section.dark .accordion-faq details .accordion-faq-item-body p,
+.section.inverse .accordion-faq details .accordion-faq-item-body p {
+  color: var(--text-color-muted-inverse);
 }
